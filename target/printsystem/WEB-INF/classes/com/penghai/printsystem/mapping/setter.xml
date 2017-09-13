@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.penghai.printsystem.dao.SetterMapper">
+	<resultMap id="setterResultMap" type="com.penghai.printsystem.bo.FirstSetter">
+		<id column="id" property="id" jdbcType="INTEGER"/>
+		<result column="product" property="product" jdbcType="VARCHAR"/> 
+		<result column="desc" property="desc" jdbcType="VARCHAR"/> 
+		<result column="picture" property="picture" jdbcType="VARCHAR"/> 
+		<result column="pid" property="pid" jdbcType="INTEGER"/> 
+	</resultMap>
+	
+	<select id="selectSetter" resultMap="setterResultMap">
+		SELECT * FROM chip_resetter LIMIT 4
+	</select>
+	
+	<select id="selectAllSetter" resultMap="setterResultMap">
+		SELECT * FROM chip_resetter	
+	</select>
+</mapper>

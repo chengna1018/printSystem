@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.penghai.printsystem.dao.FirstRightMapper">
+	<resultMap id="firstRightResultMap" type="com.penghai.printsystem.bo.FirstRight">
+		<id property="id" column="id" jdbcType="INTEGER"/>
+		<result property="pname" column="pname" jdbcType="VARCHAR"/>
+		<result property="product" column="product" jdbcType="VARCHAR"/>
+		<result property="pid" column="pid" jdbcType="INTEGER"/>		
+	</resultMap>
+	
+	<select id="getProductById" resultMap="firstRightResultMap" parameterType="int">
+		select * from first_right
+	</select>
+
+</mapper>

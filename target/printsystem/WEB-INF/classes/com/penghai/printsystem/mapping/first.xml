@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.penghai.printsystem.dao.FirstMapper">
+	<resultMap id="BaseResultMap" type="com.penghai.printsystem.bo.First">
+		<id column="id" property="id" jdbcType="INTEGER"/>
+		<result column="pname" property="pname" jdbcType="VARCHAR"/>
+		<result column="desc" property="desc" jdbcType="VARCHAR"/>
+		<result column="picture" property="picture" jdbcType="VARCHAR"/>
+		<result column="pid" property="pid" jdbcType="INTEGER"/>
+	</resultMap>
+	
+	<select id="getFirst" resultMap="BaseResultMap" parameterType="int">
+	select * from first where id=#{id,jdbcType=INTEGER}
+	</select>
+	
+	<select id="getFirstPage" resultMap="BaseResultMap" parameterType="int">
+	select * from first
+	</select>
+</mapper>

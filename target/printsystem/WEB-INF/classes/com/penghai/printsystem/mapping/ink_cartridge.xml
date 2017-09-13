@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.penghai.printsystem.dao.InkCartridgeMapper">
+	<resultMap id="inkCartridgeResultMap" type="com.penghai.printsystem.bo.FirstInkCartridge">
+		<id column="id" property="id" jdbcType="INTEGER"/>
+		<result column="product" property="product" jdbcType="VARCHAR"/>
+		<result column="desc" property="desc" jdbcType="VARCHAR"/>
+		<result column="picture" property="picture" jdbcType="VARCHAR"/>
+		<result column="pid" property="pid" jdbcType="INTEGER"/>
+	</resultMap>
+	
+	<select id="selectInkCartridge" resultMap="inkCartridgeResultMap">
+		SELECT * FROM ink_cartridge LIMIT 4
+	</select>
+	
+	<select id="selectAllInkCartridge" resultMap="inkCartridgeResultMap">
+		select * from ink_cartridge
+	</select>
+</mapper>
